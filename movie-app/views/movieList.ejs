@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <link rel="stylesheet" href="/css/site.css" />
+  </head>
+  <body>
+    <div class="card" id="mainMenuCard">
+      <h1>Movie List</h1>
+      <a href="/movies/add"><button>Add New Movie</button></a>
+
+      <ul>
+        <% locals.movies.forEach((movie) => { %>
+        <li class="customBorder card">
+          <bold><%= movie.title %> directed by <%= movie.director %></bold>
+          <a href="/movies/delete/<%= movie.index %>"
+            ><button>Delete</button></a
+          >
+        </li>
+        <% }) %>
+      </ul>
+
+      <a href="/"><button>Home</button></a>
+    </div>
+  </body>
+</html>
